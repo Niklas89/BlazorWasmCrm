@@ -11,10 +11,12 @@ namespace BlazorWasmCrm.Server.Controllers
     public class ContactsController : ControllerBase
     {
         private readonly DataContext _context;
+        private readonly string _googleMapsApiKey;
 
-        public ContactsController(DataContext context)
+        public ContactsController(DataContext context, IConfiguration configuration)
         {
             _context = context;
+            _googleMapsApiKey = configuration["GoogleMaps:ApiKey"] ?? throw new InvalidOperationException("Google Maps API key is missing.");
         }
 
         [HttpGet]
@@ -97,7 +99,7 @@ namespace BlazorWasmCrm.Server.Controllers
 
         MapPoint? GetLatLong(Contact contact)
         {
-            var gls = new GoogleLocationService("YOUR API KEY HERE");
+            var gls = new GoogleLocationService(_googleMapsApiKey);
             var latLong = gls.GetLatLongFromAddress(contact.Place);
             return latLong;
         }
