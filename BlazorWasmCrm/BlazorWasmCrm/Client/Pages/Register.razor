@@ -1,0 +1,58 @@
+﻿@page "/register"
+
+<PageTitle>Register</PageTitle>
+
+<div class="container">
+  <div class="row">
+        <div class="col">
+        </div>
+        <div class="col">
+            <h3>Register</h3>
+        @if (string.IsNullOrEmpty(message))
+        {
+            <EditForm Model="user" OnValidSubmit="HandleRegistration">
+                <DataAnnotationsValidator />
+                <div class="mb-3">
+                    <label for="Email">Email</label>
+                    <SfTextBox @bind-Value="user.Email" Placeholder="Enter an email" />
+                    <ValidationMessage For="@(() => user.Email)" />
+                </div>
+                <div class="mb-3">
+                    <label for="Password">Password</label>
+                    <SfTextBox @bind-Value="user.Password" type="InputType.Password" />
+                    <ValidationMessage For="@(() => user.Password)" />
+                </div>
+                <div class="mb-3">
+                    <label for="ConfirmPassword">Confirm Password</label>
+                    <SfTextBox @bind-Value="user.ConfirmPassword" type="InputType.Password" />
+                    <ValidationMessage For="@(() => user.ConfirmPassword)" />
+                </div>
+                <div class="submit-btn">
+                    <SfButton type="submit" IsPrimary="true">Submit</SfButton>
+                </div>
+            </EditForm>
+        }
+        else
+        {
+            <div class="@messageCssClass">
+                @message
+            </div>
+        }
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    UserRegister user = new UserRegister();
+
+    string message = string.Empty;
+    string messageCssClass = string.Empty;
+
+    void HandleRegistration()
+    {
+    }
+}

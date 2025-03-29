@@ -14,17 +14,23 @@
     <PackageReference Include="Syncfusion.Blazor.Buttons" Version="28.2.3" />
     <PackageReference Include="Syncfusion.Blazor.Calendars" Version="28.2.3" />
     <PackageReference Include="Syncfusion.Blazor.Cards" Version="28.2.3" />
+    <PackageReference Include="Syncfusion.Blazor.DropDowns" Version="28.2.3" />
     <PackageReference Include="Syncfusion.Blazor.Grid" Version="28.2.3" />
     <PackageReference Include="Syncfusion.Blazor.Inputs" Version="28.2.3" />
     <PackageReference Include="Syncfusion.Blazor.Maps" Version="28.2.3" />
     <PackageReference Include="Syncfusion.Blazor.Navigations" Version="28.2.3" />
     <PackageReference Include="Syncfusion.Blazor.Notifications" Version="28.2.3" />
     <PackageReference Include="Syncfusion.Blazor.Popups" Version="28.2.3" />
+    <PackageReference Include="Syncfusion.Blazor.SplitButtons" Version="28.2.3" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="28.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Shared\BlazorWasmCrm.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\bootstrap\" />
   </ItemGroup>
 
 </Project>

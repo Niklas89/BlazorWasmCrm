@@ -11,6 +11,7 @@ main {
 .validation-message {
     font-size: 12px !important;
     font-family: system-ui;
+    color: red;
 }
 
 h1:focus {

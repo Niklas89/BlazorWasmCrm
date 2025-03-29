@@ -12,9 +12,13 @@
     <AppBarSpacer></AppBarSpacer>
     <SfButton CssClass="e-inherit" IconCss="e-icons e-plus"
               Content="New Contact" OnClick="@(() => NavigateToPage("/contacts/new"))" />
+    <SfButton CssClass="e-inherit" IconCss="oi oi-person"
+              Content="Sign up" OnClick="@(() => NavigateToPage("/register"))" />
 </SfAppBar>
 
 @code {
+    // IconCss="oi oi-account-login"
+    // IconCss="oi oi-account-logout"
     void NavigateToPage(string page)
     {
         NavigationManager.NavigateTo(page);
