@@ -1,6 +1,9 @@
 ﻿@page "/register"
+@inject IAuthService AuthService
 
 <PageTitle>Register</PageTitle>
+
+
 
 <div class="container">
   <div class="row">
@@ -52,7 +55,14 @@
     string message = string.Empty;
     string messageCssClass = string.Empty;
 
-    void HandleRegistration()
+    async Task HandleRegistration()
     {
+        // https://blazor.syncfusion.com/demos/textbox/forms-validation?theme=fluent for validation
+        var result = await AuthService.Register(user);
+        message = result.Message;
+        if (result.Success)
+            messageCssClass = "text-success";
+        else
+            messageCssClass = "text-danger";
     }
 }

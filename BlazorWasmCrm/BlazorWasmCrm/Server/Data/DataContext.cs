@@ -58,5 +58,7 @@ namespace BlazorWasmCrm.Server.Data
 
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Note> Notes { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Address> Addresses { get; set; }
     }
 }

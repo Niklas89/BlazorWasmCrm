@@ -1,4 +1,5 @@
-using BlazorWasmCrm.Server.Data;
+global using BlazorWasmCrm.Server.Data;
+global using BlazorWasmCrm.Server.Services.AuthService;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddUserSecrets<Program>();
@@ -6,6 +7,8 @@ builder.Configuration.AddUserSecrets<Program>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<DataContext>();
+
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 
