@@ -10,13 +10,6 @@ namespace BlazorWasmCrm.Server.Data
 
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder
-                .UseSqlServer("Server=.\\SQLExpress;Database=BlazorCrm;Trusted_Connection=true;TrustServerCertificate=true");
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Contact>().HasData(

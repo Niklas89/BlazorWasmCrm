@@ -17,5 +17,11 @@ namespace BlazorWasmCrm.Client.Services.AuthService
             var result = await _http.PostAsJsonAsync("api/auth/register", request);
             return await result.Content.ReadFromJsonAsync<ServiceResponse<int>>();
         }
+
+        public async Task<ServiceResponse<string>> Login(UserLogin request)
+        {
+            var result = await _http.PostAsJsonAsync("api/auth/login", request);
+            return await result.Content.ReadFromJsonAsync<ServiceResponse<string>>();
+        }
     }
 }
