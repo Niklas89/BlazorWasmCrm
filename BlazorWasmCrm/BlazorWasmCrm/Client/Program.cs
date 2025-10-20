@@ -4,6 +4,7 @@ using BlazorWasmCrm.Client;
 using Syncfusion.Blazor;
 using Blazored.LocalStorage;
 using BlazorWasmCrm.Client.Services.AuthService;
+using Microsoft.AspNetCore.Components.Authorization;
 
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -17,6 +18,9 @@ builder.Services.AddHttpClient("BlazorWasmCrm.ServerAPI", client => client.BaseA
 // Supply HttpClient instances that include access tokens when making requests to the server project
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("BlazorWasmCrm.ServerAPI"));
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddOptions();
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 
 // generate a new licence key in syncfusion account
 await builder.Build().RunAsync();
