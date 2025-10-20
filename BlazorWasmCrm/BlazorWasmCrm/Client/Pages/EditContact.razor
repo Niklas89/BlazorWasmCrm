@@ -2,6 +2,7 @@
 @page "/contacts/new"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
+@attribute [Authorize]
 
 @if (Id is not null)
 {

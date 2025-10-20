@@ -16,6 +16,8 @@
             <AppBarSpacer></AppBarSpacer>
             <SfButton CssClass="e-inherit" IconCss="e-icons e-plus"
                       Content="New Contact" OnClick="@(() => NavigateToPage("/contacts/new"))" />
+            <SfButton CssClass="e-inherit" IconCss="oi oi-person"
+                      Content="Profile" OnClick="@(() => NavigateToPage("/profile"))" />
             <SfButton CssClass="e-inherit" IconCss="oi oi-account-logout"
                       Content="Logout" OnClick="@(() => Logout())" />
         </Authorized>
